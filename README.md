@@ -1,5 +1,8 @@
 Element Specification
 =====================
+
+[![Build Status](https://travis-ci.org/LMAX-Exchange/elementspec.svg?branch=master)](https://travis-ci.org/LMAX-Exchange/elementspec)
+
 ElementSpecification is a small library that assists with writing automated UI tests.  It provides a simple, easy to read way to specify a particular element in the interface. For example identifying
 a button to click to submit a form or identifying a table row to check the data presented is correct. Using ElementSpecification not only makes those selectors simpler to read, it automatically
 avoids many of the most common mistakes that can lead to intermittent failures in tests.
