@@ -23,6 +23,7 @@ defaultTasks 'build'
 
 group = 'com.lmax'
 version = '1.0'
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 ext {
     fullName = 'Element Specification'
@@ -113,7 +114,7 @@ install {
 }
 
 signing {
-    required { gradle.taskGraph.hasTask('uploadArchives') }
+    required { isReleaseVersion && gradle.taskGraph.hasTask('uploadArchives') }
     sign configurations.archives
 }
 
@@ -135,7 +136,7 @@ checkstyle {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.8'
+    gradleVersion = '2.9'
 }
 
 idea {
