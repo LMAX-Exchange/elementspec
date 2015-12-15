@@ -160,4 +160,10 @@ final class IdElementSpecification implements ElementSpecification
     {
         return By.id(id);
     }
+
+    @Override
+    public String toString()
+    {
+        return asSeleniumLocator();
+    }
 }

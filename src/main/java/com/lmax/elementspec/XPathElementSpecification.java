@@ -192,6 +192,12 @@ final class XPathElementSpecification implements ElementSpecification
         return true;
     }
 
+    @Override
+    public String toString()
+    {
+        return asSeleniumLocator();
+    }
+
     private String hasClassCondition(final String classname)
     {
         return "contains(concat(' ', @class, ' '), ' " + classname + " ')";

@@ -191,6 +191,12 @@ final class CssElementSpecification implements ElementSpecification
         return true;
     }
 
+    @Override
+    public String toString()
+    {
+        return asSeleniumLocator();
+    }
+
     private ElementSpecification modifyCurrentToken(final UnaryOperator<CssToken> operator)
     {
         return new CssElementSpecification(previousTokens, operator.apply(currentToken.orElse(CssToken.AN_ELEMENT)));

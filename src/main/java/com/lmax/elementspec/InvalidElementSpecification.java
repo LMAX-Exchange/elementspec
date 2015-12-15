@@ -147,4 +147,10 @@ class InvalidElementSpecification implements ElementSpecification
     {
         throw new IllegalStateException("Unable to build a valid element specification.");
     }
+
+    @Override
+    public String toString()
+    {
+        return "<INVALID SELECTOR>";
+    }
 }
