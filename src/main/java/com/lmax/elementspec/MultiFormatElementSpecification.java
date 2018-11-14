@@ -115,6 +115,12 @@ final class MultiFormatElementSpecification implements ElementSpecification
     }
 
     @Override
+    public ElementSpecification inPositionOfType(int position)
+    {
+        return each(builder -> builder.inPositionOfType(position));
+    }
+
+    @Override
     public ElementSpecification withText(final String text)
     {
         return each(builder -> builder.withText(text));

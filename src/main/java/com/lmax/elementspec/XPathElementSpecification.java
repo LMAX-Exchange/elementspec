@@ -120,6 +120,12 @@ final class XPathElementSpecification implements ElementSpecification
     }
 
     @Override
+    public ElementSpecification inPositionOfType(int position)
+    {
+        return appendCondition(Integer.toString(position));
+    }
+
+    @Override
     public ElementSpecification withText(final String text)
     {
         if (text.isEmpty())

@@ -83,6 +83,12 @@ class InvalidElementSpecification implements ElementSpecification
     }
 
     @Override
+    public ElementSpecification inPositionOfType(int position)
+    {
+        return this;
+    }
+
+    @Override
     public ElementSpecification withText(final String text)
     {
         return this;

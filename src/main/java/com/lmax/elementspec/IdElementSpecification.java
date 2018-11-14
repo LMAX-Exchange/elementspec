@@ -102,6 +102,12 @@ final class IdElementSpecification implements ElementSpecification
     }
 
     @Override
+    public ElementSpecification inPositionOfType(int position)
+    {
+        return INVALID;
+    }
+
+    @Override
     public ElementSpecification withText(final String text)
     {
         return INVALID;

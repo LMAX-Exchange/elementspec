@@ -280,6 +280,29 @@ public interface ElementSpecification
     ElementSpecification inPosition(int position);
 
     /**
+     * Require the current element to be in position {@code position} with respect to the elements of the same type.
+     * This is best used after an entry that specifies a tag name.
+     *
+     * <p>So given the DOM structure:</p>
+     *
+     * <pre>{@code
+     * <div>
+     *     <span/>
+     *     <p>Line 1</p>
+     *     <p>Line 2</p>
+     *     <p>Line 3</p>
+     * </div>
+     * }</pre>
+     *
+     * <p>The selector: {@code ...thatContainsA("p").inPosition(2)} would select the
+     * middle {@code p} with the text "Line 2".</p>
+     *
+     * @param position the required position.
+     * @return the new {@code ElementSpecification}.
+     */
+    ElementSpecification inPositionOfType(int position);
+
+    /**
      * Require the text content of the current element to be {@code text}.
      *
      * @param text the expected text.

@@ -188,6 +188,24 @@ public class CssElementSpecificationTest
     }
 
     @Test
+    public void shouldCreateCssForElementInPositionOfType() throws Exception
+    {
+        assertCss(anElement().inPositionOfType(3), ":nth-of-type(3)");
+    }
+
+    @Test
+    public void shouldCreateCssForElementInPositionOfTypeWithTagName() throws Exception
+    {
+        assertCss(anElementOfType("input").inPositionOfType(3), "input:nth-of-type(3)");
+    }
+
+    @Test
+    public void shouldCreateCssForElementInPositionOfTypeWithIdAndAttributeShouldOrderSelectorsCorrectly() throws Exception
+    {
+        assertCss(anElement().withAttribute("attr").inPositionOfType(3).withId("foo"), "#foo:nth-of-type(3)[attr]");
+    }
+
+    @Test
     public void shouldBeInvalidIfWithTextIsUsed() throws Exception
     {
         assertInvalid(anElement().withText("foo"));

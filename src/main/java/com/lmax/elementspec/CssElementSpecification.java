@@ -144,6 +144,12 @@ final class CssElementSpecification implements ElementSpecification
     }
 
     @Override
+    public ElementSpecification inPositionOfType(int position)
+    {
+        return modifyCurrentToken(token -> token.withPseudoClass(":nth-of-type(" + position + ")"));
+    }
+
+    @Override
     public ElementSpecification withText(final String text)
     {
         return INVALID;
